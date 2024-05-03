@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router";
 import { LogementObject } from "./Logement";
 import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
+import Card from "../components/Card";
 
 export async function loader() {
   const data: Promise<Array<LogementObject>> = (
@@ -14,11 +16,14 @@ export default function Home() {
   console.log("logements :  ", logements);
   return (
     <>
-      this is the home
+      <Banner />
       {logements.map((logement) => (
         <Link to={`/logements/${logement.id}`} key={logement.id}>
-          {" "}
-          {logement.title}{" "}
+          <Card
+            title={logement.title}
+            img={logement.cover}
+            alt={logement.title}
+          />
         </Link>
       ))}
     </>

@@ -1,0 +1,22 @@
+.mainContainer {
+  position: relative;
+  max-width: 100%;
+  max-height: 111px;
+  overflow: hidden;
+  border-radius: 10px;
+  img {
+    object-fit: cover;
+    object-position: -130px -145px;
+    width: 600px;
+    filter: brightness(40%);
+  }
+
+  h1 {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 700;
+    left: 16px;
+    bottom: 32px;
+    color: white;
+  }
+}
