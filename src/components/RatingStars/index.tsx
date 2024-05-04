@@ -4,11 +4,7 @@ import styles from "./rating.module.scss";
 
 export default function RatingStars({ rating }: { rating: number }) {
   let stars: Array<0 | 1> = Array(5).fill(0);
-  if ((rating = 5)) {
-    stars.fill(1, 0, 4);
-  } else {
-    stars.fill(1, 0, rating - 1);
-  }
+  stars.fill(1, 0, rating);
   return (
     <div className={styles.mainContainer}>
       {stars.map((star) => (star == 1 ? <Star /> : <StarEmpty />))}
