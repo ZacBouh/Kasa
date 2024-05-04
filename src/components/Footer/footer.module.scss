@@ -1,0 +1,21 @@
+.mainContainer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 66px;
+  margin-top: 27px;
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 12px;
+    width: 133.59px;
+    height: 46px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-bottom: 58px;
+    line-height: 142.6%;
+  }
+}

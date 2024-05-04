@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./main.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFoundPage from "./components/NotFoundPage.tsx";
-import Home, { loader as homeLoader } from "./routes/Home.tsx";
+import Home, { loader as homeLoader } from "./routes/Home";
 import Logement, { loader as logementLoader } from "./routes/Logement.tsx";
 import About from "./routes/About.tsx";
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFoundPage />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <Home />, loader: homeLoader },
       {
         path: "about",
         element: <About />,

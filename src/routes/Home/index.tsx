@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router";
-import { LogementObject } from "./Logement";
+import { LogementObject } from "../Logement";
 import { Link } from "react-router-dom";
-import Banner from "../components/Banner";
-import Card from "../components/Card";
+import Banner from "../../components/Banner";
+import Card from "../../components/Card";
+import styles from "./home.module.scss";
 
 export async function loader() {
   const data: Promise<Array<LogementObject>> = (
@@ -13,9 +14,8 @@ export async function loader() {
 
 export default function Home() {
   const logements: Array<LogementObject> = useLoaderData() as typeof logements;
-  console.log("logements :  ", logements);
   return (
-    <>
+    <section className={styles.mainContainer}>
       <Banner />
       {logements.map((logement) => (
         <Link to={`/logements/${logement.id}`} key={logement.id}>
@@ -26,6 +26,6 @@ export default function Home() {
           />
         </Link>
       ))}
-    </>
+    </section>
   );
 }
