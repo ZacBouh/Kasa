@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./main.css";
+import "./main.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import NotFoundPage from "./components/NotFoundPage.tsx";
+import NotFoundPage from "./routes/NotFoundPage.tsx";
 import Home, { loader as homeLoader } from "./routes/Home";
-import Logement, { loader as logementLoader } from "./routes/Logement.tsx";
+import Logement, {
+  loader as logementLoader,
+} from "./routes/Logement/index.tsx";
 import About from "./routes/About.tsx";
 
 const router = createBrowserRouter([

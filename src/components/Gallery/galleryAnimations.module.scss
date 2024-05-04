@@ -1,0 +1,85 @@
+$transition-speed: 200ms;
+$mid-opacity: 0.7;
+
+@mixin animation {
+  animation-duration: $transition-speed;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.exitLeft {
+  animation-name: left;
+  @include animation;
+}
+
+.exitRight {
+  animation-name: right;
+  @include animation;
+}
+
+.enterRight {
+  animation-name: enterRight;
+  @include animation;
+}
+
+.enterLeft {
+  animation-name: enterLeft;
+  @include animation;
+}
+
+@keyframes left {
+  0% {
+    object-position: center;
+  }
+
+  50% {
+    opacity: $mid-opacity;
+  }
+
+  100% {
+    object-position: -500px;
+    opacity: 0;
+  }
+}
+@keyframes right {
+  0% {
+    object-position: center;
+  }
+
+  50% {
+    opacity: $mid-opacity;
+  }
+
+  100% {
+    object-position: 500px;
+    opacity: 0;
+  }
+}
+@keyframes enterLeft {
+  0% {
+    object-position: -500px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: $mid-opacity;
+  }
+
+  100% {
+    object-position: center;
+  }
+}
+@keyframes enterRight {
+  0% {
+    object-position: 500px;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: $mid-opacity;
+  }
+
+  100% {
+    object-position: center;
+  }
+}

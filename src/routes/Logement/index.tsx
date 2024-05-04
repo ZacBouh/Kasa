@@ -1,5 +1,9 @@
+import RatingStars from "../../components/RatingStars";
 import { useLoaderData } from "react-router";
 import { LoaderFunctionArgs } from "react-router";
+import Gallery from "../../components/Gallery";
+import styles from "./logement.module.scss";
+import Tag from "../../components/Tag";
 
 const logementObject = {
   id: "c67ab8a7",
@@ -48,8 +52,15 @@ export default function Logement() {
 
   return (
     <>
-      <div>Logement page</div>
-      <div>Titre : {logement.title}</div>
+      <Gallery title={logement.title} />
+      <h1 className={styles.title}>{logement.title}</h1>
+      <p className={styles.location}>{logement.location}</p>
+      <div className={styles.tagContainer}>
+        {logement.tags.map((tag) => (
+          <Tag content={tag} key={tag} />
+        ))}
+      </div>
+      <RatingStars rating={logement.rating} />
     </>
   );
 }

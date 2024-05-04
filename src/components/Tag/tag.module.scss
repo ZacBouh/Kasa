@@ -1,0 +1,15 @@
+@import "../../main.scss";
+
+.mainContainer {
+  width: 84px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: 600;
+  //   line-height: 15px;
+  border-radius: 5px;
+  background-color: $color-primary;
+  color: white;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 0px;
+}
