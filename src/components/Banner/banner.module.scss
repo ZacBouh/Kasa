@@ -11,6 +11,12 @@
     filter: brightness(40%);
   }
 
+  .noCaption {
+    filter: brightness(70%);
+    width: 100%;
+    object-position: 0px -60px;
+  }
+
   h1 {
     position: absolute;
     font-size: 24px;

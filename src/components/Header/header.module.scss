@@ -15,9 +15,17 @@
   line-height: 17px;
   margin-left: 43px;
   flex-grow: 1;
-  flex-shrink: 1;
+  flex-shrink: 0;
   a {
     color: black;
+    text-decoration: none;
+  }
+
+  .isActive {
+    text-decoration: underline;
+  }
+
+  .isNotActive {
     text-decoration: none;
   }
 }

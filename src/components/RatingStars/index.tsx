@@ -7,7 +7,9 @@ export default function RatingStars({ rating }: { rating: number }) {
   stars.fill(1, 0, rating);
   return (
     <div className={styles.mainContainer}>
-      {stars.map((star) => (star == 1 ? <Star /> : <StarEmpty />))}
+      {stars.map((star, index) =>
+        star == 1 ? <Star key={index} /> : <StarEmpty key={index} />
+      )}
     </div>
   );
 }

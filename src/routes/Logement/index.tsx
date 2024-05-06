@@ -1,3 +1,6 @@
+import Location from "@/components/Location";
+import Dropdown from "@/components/Dropdown";
+import Host from "@components/Host";
 import RatingStars from "../../components/RatingStars";
 import { useLoaderData } from "react-router";
 import { LoaderFunctionArgs } from "react-router";
@@ -42,9 +45,12 @@ export async function loader({ params }: LoaderFunctionArgs<any>) {
     await fetch("/logements.json")
   ).json();
 
-  return (await data).filter(
+  const logement = (await data).filter(
     (logement) => logement.id === params.logementId
   )[0];
+  if (!logement)
+    throw new Response("", { status: 404, statusText: "item not found" });
+  return logement;
 }
 
 export default function Logement() {
@@ -52,15 +58,22 @@ export default function Logement() {
 
   return (
     <>
-      <Gallery title={logement.title} />
+      <Gallery title={logement.title} pictures={logement.pictures} />
       <h1 className={styles.title}>{logement.title}</h1>
-      <p className={styles.location}>{logement.location}</p>
+      <Location className={styles.location} location={logement.location} />
       <div className={styles.tagContainer}>
         {logement.tags.map((tag) => (
           <Tag content={tag} key={tag} />
         ))}
       </div>
-      <RatingStars rating={logement.rating} />
+      <div className={styles.ratingAndProfileContainer}>
+        <RatingStars rating={logement.rating} />
+        <Host name={logement.host.name} picture={logement.host.picture} />
+      </div>
+      <div className={styles.detailsContainer}>
+        <Dropdown title="Description" content={[logement.description]} />
+        <Dropdown title="Equipements" content={logement.equipments} />
+      </div>
     </>
   );
 }

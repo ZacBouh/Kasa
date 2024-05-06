@@ -1,0 +1,26 @@
+@import "../../main.scss";
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .image {
+    margin-top: 86px;
+    margin-bottom: 113px;
+  }
+
+  p {
+    font-size: 18px;
+    color: $color-primary;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .link {
+    margin-top: 113px;
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+  }
+}

@@ -7,8 +7,22 @@ export default function Header() {
     <header className={styles.mainContainer}>
       <Logo />
       <nav className={styles.nav}>
-        <NavLink to={"home"}>ACCUEIL</NavLink>
-        <NavLink to={"about"}>A PROPOS</NavLink>
+        <NavLink
+          to={"home"}
+          className={({ isActive }) =>
+            isActive ? styles.isActive : styles.isNotActive
+          }
+        >
+          ACCUEIL
+        </NavLink>
+        <NavLink
+          to={"about"}
+          className={({ isActive }) =>
+            isActive ? styles.isActive : styles.isNotActive
+          }
+        >
+          A PROPOS
+        </NavLink>
       </nav>
     </header>
   );
