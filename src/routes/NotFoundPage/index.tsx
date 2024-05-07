@@ -10,8 +10,11 @@ const NotFoundPage: React.FC = () => {
   return (
     <div className={styles.mainContainer}>
       <Image404 className={styles.image} />
-      <p>Oups! La page que</p>
-      <p>vous demandez n'existe pas.</p>
+
+      <p>
+        <span>Oups! La page que </span>
+        <span>vous demandez n'existe pas.</span>
+      </p>
       <Link to={"/"} className={styles.link}>
         Retourner sur la page d'accueil
       </Link>

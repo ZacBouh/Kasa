@@ -14,9 +14,11 @@ export default function About() {
 
   return (
     <main className={styles.mainContainer}>
-      <Banner caption={false} picture={bannerImage} alt="Paysage de montagne" />
-      {topics.map((topic) => (
-        <Dropdown title={topic} content={content} key={topic} />
+      <div className={styles.bannerWrapper}>
+        <Banner caption={false} picture={bannerImage} />
+      </div>
+      {topics.map((topic, index) => (
+        <Dropdown title={topic} content={[content[index]]} key={topic} />
       ))}
     </main>
   );

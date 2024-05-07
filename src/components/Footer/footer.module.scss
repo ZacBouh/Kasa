@@ -1,3 +1,5 @@
+@import "../../main.scss";
+
 .mainContainer {
   background-color: black;
   color: white;
@@ -17,5 +19,21 @@
     flex-shrink: 0;
     margin-bottom: 58px;
     line-height: 142.6%;
+    span {
+      display: inline-block;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    .text {
+      font-size: 24px;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 28px;
+      line-height: 34px;
+    }
   }
 }

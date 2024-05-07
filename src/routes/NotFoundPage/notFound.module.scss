@@ -15,6 +15,10 @@
     color: $color-primary;
     text-align: center;
     font-weight: 500;
+    span {
+      display: inline-block;
+      white-space: pre-wrap;
+    }
   }
 
   .link {
@@ -22,5 +26,25 @@
     font-size: 14px;
     color: black;
     font-weight: 500;
+  }
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    padding-bottom: 139px;
+    .image {
+      width: 597px;
+      height: 263px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 51px;
+    }
+    .link {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25.5px;
+    }
   }
 }

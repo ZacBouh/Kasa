@@ -54,3 +54,41 @@ $transition-function: ease-out;
   padding-top: 0px;
   padding-bottom: 0px;
 }
+
+@media (min-width: $media-mid) {
+  .titleContainer {
+    box-sizing: border-box;
+    height: 52px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.5px;
+    border-radius: 10px;
+    padding-right: 24px;
+    img {
+      width: 24px;
+      height: 13px;
+    }
+  }
+
+  @mixin contentContainer {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.67px;
+    padding-top: 24px;
+  }
+
+  .contentOpen {
+    @include contentContainer();
+    position: relative;
+    z-index: -1;
+    transform: translateY(-8px);
+  }
+
+  .contentClosed {
+    @include contentContainer();
+    padding-top: 0px;
+    position: relative;
+    z-index: -1;
+    transform: translateY(-8px);
+  }
+}

@@ -1,6 +1,46 @@
+@import "../../main.scss";
+
 .mainContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 27px;
+
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    margin-bottom: 50px;
+    gap: 43px;
+    .cardsContainer {
+      background-color: rgba(246, 246, 246, 1);
+      border-radius: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 56px 50px 43px 50px;
+      gap: 50px;
+    }
+  }
+}
+
+@media (min-width: $media-large) {
+  .mainContainer {
+    .cardsContainer {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 25px;
+    }
+  }
+}
+@media (min-width: $media-xlarge) {
+  .mainContainer {
+    .cardsContainer {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+    }
+  }
 }

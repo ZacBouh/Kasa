@@ -8,7 +8,11 @@ export default function RatingStars({ rating }: { rating: number }) {
   return (
     <div className={styles.mainContainer}>
       {stars.map((star, index) =>
-        star == 1 ? <Star key={index} /> : <StarEmpty key={index} />
+        star == 1 ? (
+          <Star key={index} className={styles.star} />
+        ) : (
+          <StarEmpty key={index} className={styles.star} />
+        )
       )}
     </div>
   );

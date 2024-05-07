@@ -5,7 +5,7 @@ import styles from "@components/Header/header.module.scss";
 export default function Header() {
   return (
     <header className={styles.mainContainer}>
-      <Logo />
+      <Logo className={styles.logo} />
       <nav className={styles.nav}>
         <NavLink
           to={"home"}

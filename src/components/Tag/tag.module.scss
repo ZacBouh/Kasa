@@ -1,14 +1,26 @@
 @import "../../main.scss";
 
 .mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // width: 84px;
   height: 14px;
   font-size: 10px;
   font-weight: 600;
-  //   line-height: 15px;
-  border-radius: 5px;
+  // line-height: 15px;
+  border-radius: 10px;
   background-color: $color-primary;
   color: white;
   text-align: center;
-  padding: 4px 20px 0px 20px;
+  padding: 0px 20px;
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    height: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px 30px;
+  }
 }

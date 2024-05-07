@@ -1,12 +1,18 @@
+@import "../../main.scss";
+$darken: var(--darken);
+$dropShadow: var(--shadow);
 .mainContainer {
   position: relative;
-  max-width: 100%;
-  max-height: 111px;
-  overflow: hidden;
+  width: 100%;
+  height: 111px;
   border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, $darken), rgba(0, 0, 0, $darken)),
+    var(--bg-url);
+  background-position: center;
+  background-size: cover;
   img {
     object-fit: cover;
-    object-position: -130px -145px;
+    object-position: -35% -145px;
     width: 600px;
     filter: brightness(40%);
   }
@@ -24,5 +30,34 @@
     left: 16px;
     bottom: 32px;
     color: white;
+    span {
+      display: inline-block;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    height: 223px;
+    filter: $dropShadow;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+    h1 {
+      // margin-left: 1em;
+      // margin-right: 1em;
+      position: relative;
+      left: 0px;
+      bottom: 0px;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 68.45px;
+    }
   }
 }

@@ -1,6 +1,19 @@
+@import "../../main.scss";
+
 .mainContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 27px;
+}
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    gap: 30px;
+    margin-bottom: 38px;
+  }
+
+  .bannerWrapper {
+    margin-bottom: 8px;
+  }
 }

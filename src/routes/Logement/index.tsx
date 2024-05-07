@@ -59,16 +59,21 @@ export default function Logement() {
   return (
     <>
       <Gallery title={logement.title} pictures={logement.pictures} />
-      <h1 className={styles.title}>{logement.title}</h1>
-      <Location className={styles.location} location={logement.location} />
-      <div className={styles.tagContainer}>
-        {logement.tags.map((tag) => (
-          <Tag content={tag} key={tag} />
-        ))}
-      </div>
-      <div className={styles.ratingAndProfileContainer}>
-        <RatingStars rating={logement.rating} />
-        <Host name={logement.host.name} picture={logement.host.picture} />
+
+      <div className={styles.infosContainer}>
+        <div className={styles.titleAndTagsContainer}>
+          <h1 className={styles.title}>{logement.title}</h1>
+          <Location className={styles.location} location={logement.location} />
+          <div className={styles.tagContainer}>
+            {logement.tags.map((tag) => (
+              <Tag content={tag} key={tag} />
+            ))}
+          </div>
+        </div>
+        <div className={styles.ratingAndProfileContainer}>
+          <RatingStars rating={logement.rating} />
+          <Host name={logement.host.name} picture={logement.host.picture} />
+        </div>
       </div>
       <div className={styles.detailsContainer}>
         <Dropdown title="Description" content={[logement.description]} />

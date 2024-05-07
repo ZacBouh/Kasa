@@ -17,20 +17,18 @@ export default function Home() {
   const logements: Array<LogementObject> = useLoaderData() as typeof logements;
   return (
     <section className={styles.mainContainer}>
-      <Banner
-        caption={true}
-        picture={bannerImage}
-        alt={"image de bord de mer"}
-      />
-      {logements.map((logement) => (
-        <Link to={`/logements/${logement.id}`} key={logement.id}>
-          <Card
-            title={logement.title}
-            img={logement.cover}
-            alt={logement.title}
-          />
-        </Link>
-      ))}
+      <Banner caption={true} picture={bannerImage} />
+      <div className={styles.cardsContainer}>
+        {logements.map((logement) => (
+          <Link to={`/logements/${logement.id}`} key={logement.id}>
+            <Card
+              title={logement.title}
+              img={logement.cover}
+              alt={logement.title}
+            />
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,4 +1,14 @@
+@import "../../main.scss";
+
 .mainContainer {
   display: flex;
   gap: 8px;
+}
+
+@media (min-width: $media-mid) {
+  .star {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 6px;
+  }
 }

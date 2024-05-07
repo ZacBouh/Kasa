@@ -5,8 +5,10 @@ export default function Footer() {
     <footer className={styles.mainContainer}>
       <Logo width={"122px"} height={39.44} />
       <div className={styles.text}>
-        <p>© 2020 Kasa. All</p>
-        <p>rights reserved</p>
+        <p>
+          <span>© 2020 Kasa. All </span>
+          <span>rights reserved</span>
+        </p>
       </div>
     </footer>
   );

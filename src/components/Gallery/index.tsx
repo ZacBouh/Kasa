@@ -1,4 +1,5 @@
 import arrowForward from "@assets/arrow_forward.png";
+import Arrow from "@assets/arrow_forward.svg?react";
 import styles from "./gallery.module.scss";
 import animation from "./galleryAnimations.module.scss";
 import { useState } from "react";
@@ -45,18 +46,22 @@ export default function Gallery({
         key={imageIndex}
         onAnimationEnd={handleTransition}
       />
-      <img
-        src={arrowForward}
-        alt="next image"
-        className={styles.arrowForward}
-        onClick={() => setTransition("exitLeft")}
-      />
-      <img
-        src={arrowForward}
-        alt="previous image"
-        className={styles.arrowBackward}
-        onClick={() => setTransition("exitRight")}
-      />
+      {pictures.length > 1 && (
+        <>
+          <p className={styles.imageCounter}>
+            {imageIndex + 1}/{pictures.length}
+          </p>
+
+          <Arrow
+            className={styles.arrowForward}
+            onClick={() => setTransition("exitLeft")}
+          />
+          <Arrow
+            className={styles.arrowBackward}
+            onClick={() => setTransition("exitRight")}
+          />
+        </>
+      )}
     </figure>
   );
 }

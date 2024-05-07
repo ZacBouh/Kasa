@@ -22,3 +22,19 @@ $pic-dimensions: 32px;
     height: $pic-dimensions;
   }
 }
+
+@media (min-width: $media-mid) {
+  .mainContainer {
+    margin-top: 6px;
+    height: 64px;
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 25.5px;
+    }
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
