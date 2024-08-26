@@ -1,4 +1,3 @@
-import arrowForward from "@assets/arrow_forward.png";
 import Arrow from "@assets/arrow_forward.svg?react";
 import styles from "./gallery.module.scss";
 import animation from "./galleryAnimations.module.scss";

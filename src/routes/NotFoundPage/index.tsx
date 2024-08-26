@@ -1,5 +1,5 @@
 import styles from "./notFound.module.scss";
-import { useRouteError, isRouteErrorResponse } from "react-router-dom";
+import { useRouteError } from "react-router-dom";
 import Image404 from "@assets/404.svg?react";
 import { Link } from "react-router-dom";
 
